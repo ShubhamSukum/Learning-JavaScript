@@ -81,3 +81,59 @@ const bmi2=mark.calcBmi()
 
 */
 
+/*
+Learning javascript For loops
+
+    for(let i=1;i<=10;i++)
+    {
+        console.log(`The number after iteration is ${i}`);
+    }
+
+    
+
+
+
+for(let g=0;g<jonasArray.length;g++)
+{
+    if(typeof jonasArray[g]=='object')
+    {
+        console.log("Oops "+typeof jonasArray[g]+" occured!"+ "=> "+jonasArray[g]);
+        break;
+    }
+    console.log(jonasArray[g],typeof jonasArray[g]);
+}
+
+
+
+const obj={
+    name1:"PICT",
+    website:"www.pict.edu",
+    students:840,
+    placement:true,
+    average:98,
+    Library:"OKAY"
+};
+
+const jonasArray=[
+    'Jonas',
+    'Schmedtmann',
+    2037-1991,
+    'teacher',
+    ['Michael','peter','Steven']
+];
+
+
+*/
+
+
+let dice=Math.trunc(Math.random()*6)+1;
+console.log(`${dice} firstly`);
+let count=0;
+while(dice!=6)
+{
+    count++;
+    console.log(`${dice}`);
+    dice=Math.trunc(Math.random()*6)+1;
+}
+
+if(dice==6){console.log(`Baby we found ${dice} 🧞‍♂️ in ${count}`);}
