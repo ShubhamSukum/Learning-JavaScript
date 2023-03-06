@@ -3,11 +3,11 @@
 // console.log(document.querySelector(".message").textContent);
 
 // console.log(document.querySelector(".label-highscore").textContent);
-// while(true)
 // console.log(document.querySelector(".guess").value);
 
-const NO=Math.trunc(Math.random()*20+1);
-document.querySelector(".number").textContent=NO;
+let NO=Math.trunc(Math.random()*20+1);
+// document.querySelector(".number").textContent=NO; //answer
+let highscore=0;
 
 let score=5;
 document.querySelector(".score").textContent=5;
@@ -26,6 +26,8 @@ addEventListener('click',function(){
             // Styling
             document.querySelector("body").
             style.backgroundColor="green";
+
+            document.querySelector(".number").textContent=NO;
             
             document.querySelector(".badge").style.fontSize="2.3rem";
             
@@ -35,6 +37,9 @@ addEventListener('click',function(){
             score+=20;
             console.log(document.querySelector(".score").
             textContent=score);
+
+            document.querySelector(".highscore").textContent=
+            highscore>score?highscore:score;
     }
     
     else if(num>NO){
@@ -55,7 +60,6 @@ addEventListener('click',function(){
             document.querySelector(".score").
             textContent=0;
         }
-        
     }
     
     else if(num<NO){
@@ -76,4 +80,18 @@ addEventListener('click',function(){
             textContent=0;
         }
     }
+});
+
+document.querySelector(".again").addEventListener
+("click",function(){
+    NO=Math.trunc(Math.random()*20+1);
+    document.querySelector(".number").textContent="?";
+    // document.querySelector(".number").textContent=NO; // answer
+
+    document.querySelector(".message").
+    textContent="Start guessing...";
+
+    document.querySelector(".guess").value="";
+
+    document.querySelector("body").style.backgroundColor="#222";
 });
