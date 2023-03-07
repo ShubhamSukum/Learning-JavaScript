@@ -13,3 +13,25 @@ score1El.textContent=0;
 
 diceEl.classList.add("hidden");
 
+let curScore=0;
+
+butRoll.addEventListener("click",function(){
+    // generating a random number
+    const diceNo=Math.trunc(Math.random()*6)+1;
+    console.log(diceNo);
+
+    // displaying the changed no. as per random val
+    diceEl.src=`dice-${diceNo}.png`;
+
+    diceEl.classList.remove("hidden");
+
+    if(diceNo!==1)
+    {
+        curScore+=diceNo;
+        score0El.textContent=curScore;
+    }
+    else
+    {
+        console.log("Thamblo ghe!!");
+    }
+});
