@@ -1,5 +1,8 @@
 'use strict';
 
+const player0El=document.querySelector(".player--0");
+const player1El=document.querySelector(".player--1");
+
 const score0El=document.getElementById("score--0");
 const score1El=document.getElementById("score--1");
 const diceEl=document.querySelector(".dice");
@@ -11,9 +14,11 @@ const butHold=document.querySelector(".btn--hold");
 score0El.textContent=0;
 score1El.textContent=0;
 
-diceEl.classList.add("hidden");
-
+let scores=[0,0];
 let curScore=0;
+let active=0;
+
+diceEl.classList.add("hidden");
 
 butRoll.addEventListener("click",function(){
     // generating a random number
@@ -28,10 +33,15 @@ butRoll.addEventListener("click",function(){
     if(diceNo!==1)
     {
         curScore+=diceNo;
-        score0El.textContent=curScore;
+
+        document.getElementById(`current--${active}`).
+        textContent=curScore;
     }
     else
     {
-        console.log("Thamblo ghe!!");
+        document.getElementById(`current--${active}`).
+        textContent=0;
+        curScore=0;
+        active=active===0?1:0;
     }
 });
