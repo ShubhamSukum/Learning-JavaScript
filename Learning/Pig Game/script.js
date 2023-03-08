@@ -57,8 +57,6 @@ butRoll.addEventListener("click",function(){
             switch1();
         }
     }
-    
-    
 });
 
 butHold.addEventListener("click",function(){
@@ -80,4 +78,25 @@ butHold.addEventListener("click",function(){
 
         switch1();
     }
+});
+
+butNew.addEventListener("click",function(){
+    scores=[0,0];
+    play=true;
+
+    if(player0El.classList.contains("player--winner")){
+        player0El.classList.remove("player--winner");
+    }
+    else if(player1El.classList.contains("player--winner")){
+        player1El.classList.remove("player--winner");
+    }
+
+    document.querySelector(`.player--0`).
+    classList.add("player--active");
+
+    document.querySelector(`.player--1`).
+    classList.remove("player--active");
+
+    score0El.textContent=0;
+    score1El.textContent=0;
 });
