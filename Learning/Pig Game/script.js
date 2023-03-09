@@ -12,7 +12,9 @@ const butRoll=document.querySelector(".btn--roll");
 const butHold=document.querySelector(".btn--hold");
 
 let play=true; 
-
+let scores=[0,0];
+let curScore=0;
+let active=0;
 score0El.textContent=0;
 score1El.textContent=0;
 
@@ -26,9 +28,22 @@ const switch1=function(){
         player1El.classList.toggle("player--active");
 };
 
-let scores=[0,0];
-let curScore=0;
-let active=0;
+const init=function(){
+    play=true; 
+    scores=[0,0];
+    curScore=0;
+    active=0;
+    score0El.textContent=0;
+    score1El.textContent=0;
+
+    player0El.classList.remove("player--winner");
+    player1El.classList.remove("player--winner");
+
+    player0El.classList.add("player--active");
+    player1El.classList.remove("player--active");
+};
+
+init();
 
 diceEl.classList.add("hidden");
 
@@ -42,7 +57,6 @@ butRoll.addEventListener("click",function(){
 
         // displaying the changed no. as per random val
         diceEl.src=`dice-${diceNo}.png`;
-
         diceEl.classList.remove("hidden");
 
         if(diceNo!==1)
@@ -80,9 +94,14 @@ butHold.addEventListener("click",function(){
     }
 });
 
+
+/*My Implementation
 butNew.addEventListener("click",function(){
     scores=[0,0];
     play=true;
+    active=0;
+    score0El.textContent=0;
+    score1El.textContent=0;
 
     if(player0El.classList.contains("player--winner")){
         player0El.classList.remove("player--winner");
@@ -96,7 +115,10 @@ butNew.addEventListener("click",function(){
 
     document.querySelector(`.player--1`).
     classList.remove("player--active");
-
-    score0El.textContent=0;
-    score1El.textContent=0;
 });
+*/
+
+// jonas implementaion
+
+butNew.addEventListener("click",init);
+
