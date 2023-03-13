@@ -95,7 +95,15 @@ console.log(`jonas => ${jonas}`);
 console.log(`harsh => ${harsh}`);
 */
 
-/* object */
+/* object 
+// console.log(objName,shubz);
+
+// console.log(objName,shubz);
+
+//{firstName: 'Shubz', lastname: 'Sukum', no: 18} 
+//{firstName: 'Shubz', lastname: 'Sukum', no: 18}
+
+*/
 
 let objName={
     firstName:"Shubz",
@@ -105,11 +113,14 @@ let objName={
 
 let shubz=objName;
 shubz.lastname="Sukum";
-// console.log(objName,shubz);
-
 shubz.no=18;
 
-console.log(objName,shubz);
+const shubham=Object.assign({},shubz);
+shubham.lastname="nahi sangnar";
 
-//{firstName: 'Shubz', lastname: 'Sukum', no: 18} 
-//{firstName: 'Shubz', lastname: 'Sukum', no: 18}
+console.log(shubz,shubham);
+
+/* 
+{firstName: 'Shubz', lastname: 'Sukum', no: 18} 
+{firstName: 'Shubz', lastname: 'nahi sangnar', no: 18}
+*/
