@@ -69,19 +69,47 @@ const funcARR=(birthyear)=>{
 funcARR(2002);
 */
 
+/*
 const obj={
     firstName:"fname",
     cali:function(){
         console.log(this.firstName);
     },
 }
-
 obj.cali();
 
 const obj1={
     firstName:"lname",
 }
-
 obj1.cali=obj.cali;
-
 obj1.cali();
+*/
+
+/*
+let jonas="teacher";
+let harsh=jonas;
+
+jonas="Udemy";
+
+console.log(`jonas => ${jonas}`);
+console.log(`harsh => ${harsh}`);
+*/
+
+/* object */
+
+let objName={
+    firstName:"Shubz",
+    lastname:"ky mahit",
+    no:17
+};
+
+let shubz=objName;
+shubz.lastname="Sukum";
+// console.log(objName,shubz);
+
+shubz.no=18;
+
+console.log(objName,shubz);
+
+//{firstName: 'Shubz', lastname: 'Sukum', no: 18} 
+//{firstName: 'Shubz', lastname: 'Sukum', no: 18}
