@@ -27,3 +27,14 @@ const restaurant = {
     },
   },
 };
+
+
+const arr=[2,3,4,5];
+
+const [a,b]=arr;
+
+console.log(a,b);
+
+const shubz=new Array(1,2,4,4,2); //new array(1,0,0,0) gives error
+
+console.log(shubz);
