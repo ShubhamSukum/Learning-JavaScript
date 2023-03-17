@@ -54,6 +54,22 @@ const restaurant = {
   const er=[11,21,[12,32]];
   let [s,,[t,r]]=er;
   console.log(s+" "+t,r);
+
+
+  const shubz1={
+  name1:"asdnasid",
+  js:"vs",
+  };
+  console.log(shubz1);
+  Object.assign(shubz1,restaurant);
+
+  console.log(shubz1);
+
+  
+  const {name:N,openingHours:O,categories:C,shubz=[]}=restaurant;
+  // // console.log(shubz);
+  // console.log(N);
+
 */
 
 const restaurant = {
@@ -83,6 +99,11 @@ const restaurant = {
   }
 }
 
-const {name:N,openingHours:O,categories:C,shubz=[]}=restaurant;
-// console.log(shubz);
+let arr=[1,2,3,4];
+const newArr=[5,6,...arr];
+newArr.sort();  // for storing
 
+console.log(...newArr);
+
+const NEWWW=[...arr,...newArr];
+console.log(...NEWWW);
