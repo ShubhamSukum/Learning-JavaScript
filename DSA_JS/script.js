@@ -70,6 +70,30 @@ const restaurant = {
   // // console.log(shubz);
   // console.log(N);
 
+    
+  let arr=[1,2,3,4];
+  const newArr=[5,6,...arr];
+  newArr.sort();  // for storing
+
+  // console.log(...newArr);
+
+  const NEWWW=[...arr,...newArr];
+  console.log(...NEWWW);
+
+  //
+  const prompttt=[
+    prompt("Enter your element"),
+    prompt("Enter your element"),
+    prompt("Enter your element")
+  ];
+  console.log(prompttt);
+
+  rest DEMO 
+  console.log(NEWWW);
+
+  const [one ,two ,...n]=NEWWW;
+  console.log(one,two,n);
+
 */
 
 const restaurant = {
@@ -99,40 +123,14 @@ const restaurant = {
   }
 }
 
-let arr=[1,2,3,4];
-const newArr=[5,6,...arr];
-newArr.sort();  // for storing
-
-// console.log(...newArr);
-
-const NEWWW=[...arr,...newArr];
-// console.log(...NEWWW);
-
-// //
-// const prompttt=[
-//   prompt("Enter your element"),
-//   prompt("Enter your element"),
-//   prompt("Enter your element")
-// ];
-// console.log(prompttt);
-
-// rest DEMO 
-// console.log(NEWWW);
-
-// const [one ,two ,...n]=NEWWW;
-// console.log(one,two,n);
 
 const add=function(...nums){
     let sum=0;
-
-    for(let i=0;i<nums.length;i++)
-    {
-      sum+=nums[i];
-    }
-
+    for(let i=0;i<nums.length;i++)sum+=nums[i];
     console.log(sum);
 }
 
-let nums=[1,3,2,34,14,1,1];
+let nums=[1,3,2,34,14,1,123,123,12,31];
+nums.push(38);
 console.log(...nums);
 add(...nums);
