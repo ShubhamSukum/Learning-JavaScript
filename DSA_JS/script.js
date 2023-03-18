@@ -94,8 +94,26 @@ const restaurant = {
   const [one ,two ,...n]=NEWWW;
   console.log(one,two,n);
 
-*/
+  //getting n number of inputs and process it!!
+  const add=function(...nums){
+      let sum=0;
+      for(let i=0;i<nums.length;i++)sum+=nums[i];
+      console.log(sum);
+  }
+  let nums=[1,3,2,34,14,1,123,123,12,31];
+  nums.push(38);
+  console.log(...nums);
+  add(...nums);
 
+  restaurant.numGuest=0;
+  const guests=restaurant.numGuest||90;
+  console.log(guests);  // output 90
+
+  // nullish value opertor
+  const guests11=restaurant.numGuest??90;
+  console.log(guests11);  // output 0
+
+  
 const restaurant = {
   name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
@@ -123,14 +141,96 @@ const restaurant = {
   }
 }
 
+*/
 
-const add=function(...nums){
-    let sum=0;
-    for(let i=0;i<nums.length;i++)sum+=nums[i];
-    console.log(sum);
+/* coding challenge 1 🧞‍♂️🤫
+
+
+// 1  two players array
+
+const [player1,player2]=game.players;
+// console.log(player1,player2);
+
+// 2 one goal kepper and other as player
+
+const [goale1,...others1]=player1;
+const [goale2,...others2]=player2;
+
+// console.log(goale2,others2);
+
+ // all other players except goalies XD
+const otherPlayers=[...others1,...others2];
+
+for(let i=0;i<otherPlayers.length;i++)
+{
+  console.log(otherPlayers[i]);
 }
 
-let nums=[1,3,2,34,14,1,123,123,12,31];
-nums.push(38);
-console.log(...nums);
-add(...nums);
+// 3 all players together
+
+const allPlayers=[...player1,...player2];
+// console.log(allPlayers);
+
+// 4 Add other players in player2 array
+
+const newly2=[...player2,"newly1","newly2","newly3"];
+// console.log(newly2);
+*/
+
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+
+// 5 object selective selection
+
+const {odds:{team1,x:draw,team2}}=game;
+// console.log(team1,draw,team2);
+
+// 6 Name of player scored goal return count
+
+const six=function(...ardu){
+  console.log(`${ardu.length} goals has been scored!!`);
+}
+
+// six("1","2","safs","12123asd","rasda");
+
+// 7 
+
