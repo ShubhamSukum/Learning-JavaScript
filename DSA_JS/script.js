@@ -212,7 +212,7 @@ const game = {
   scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
   date: 'Nov 9th, 2037',
   odds: {
-    team1: 1.33,
+    team1: 11.33,
     x: 3.25,
     team2: 6.5,
   },
@@ -232,5 +232,10 @@ const six=function(...ardu){
 
 // six("1","2","safs","12123asd","rasda");
 
-// 7 
+six(...game.scored);
+
+// 7 passing the avaliable goals
+
+team1>team2 && console.log("Team 1 won the game!!");
+team1<team2 && console.log("Team 2 won the game!!");
 
