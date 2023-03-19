@@ -421,10 +421,35 @@ for(const [team,odd] of Object.entries(game.odds)){
   
 // }
 
+// // SETs
 
+// const arr=[1,313,1,414,23,412,4,12,2,2,2,2,22,1,2,1,21,2,1];
+// const set1=new Set(arr);
 
+// console.log(set1)
 
+// // searching for element in set 
+// console.log(set1.has(1));
 
+// let objname={
+//   hello:"adsnias",
+//   hii:"asbubsua"
+// }
+
+// console.log(Object.keys(objname).length);
+
+// MAP
+
+const mapy=new Map();
+mapy.set("key1","value1"); // => Adding 
+console.log(mapy.get("key1")); // => fetching
+console.log(mapy.has("key1")); // => Checking 
+console.log(mapy.delete("key1")); // => deleting 
+mapy.set("key1","value1");
+mapy.set("key1","value1");
+mapy.set("key1","value1");
+console.log(mapy)
+// has and delete same like 
 
 
 
