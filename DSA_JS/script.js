@@ -513,6 +513,9 @@ const tTime=[...gameEvents.keys()].pop();
 //   console.log(`${Half} Half  min => ${min} events => ${event}`);
 // }
 
+const str="console.log(`${Half} Half  min => ${min} events => ${event}`);";
+
+console.log(str.replace(/event/g,"asj"))
 
 
 
