@@ -437,7 +437,7 @@ for(const [team,odd] of Object.entries(game.odds)){
 // }
 
 // console.log(Object.keys(objname).length);
-
+/*
 // MAP
 
 const mapy=new Map();
@@ -450,7 +450,31 @@ mapy.set("key1","value1");
 mapy.set("key1","value1");
 console.log(mapy)
 // has and delete same like 
+*/
+/* 
+const mapy=new Map();
+mapy.set(document.querySelector("h1"),"Heading");
+console.log(mapy);
+*/
 
+const MAP=new Map(
+  [
+    ["HELLO","namaskar"],
+    ["1","namaasdskar"],
+    ["2","namasqweqwkar"],
+    ["3","namaqweqwskar"],
+  ]
+);
+
+// for array to map
+const arr2MAP=new Map(restaurant.starterMenu.entries());
+// for object to map
+const obj2MAP=new Map(Object.entries(restaurant.openingHours));
+
+// console.log(arr2MAP);
+// console.log(obj2MAP);
+
+// console.log(MAP.entries());
 
 
 
