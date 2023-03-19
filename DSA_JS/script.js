@@ -175,7 +175,28 @@ const allPlayers=[...player1,...player2];
 
 const newly2=[...player2,"newly1","newly2","newly3"];
 // console.log(newly2);
-*/
+
+
+
+// 5 object selective selection
+
+const {odds:{team1,x:draw,team2}}=game;
+// console.log(team1,draw,team2);
+
+// 6 Name of player scored goal return count
+
+const six=function(...ardu){
+  console.log(`${ardu.length} goals has been scored!!`);
+}
+
+six("1","2","safs","12123asd","rasda");
+
+six(...game.scored);
+
+// 7 passing the avaliable goals
+
+team1>team2 && console.log("Team 1 won the game!!");
+team1<team2 && console.log("Team 2 won the game!!");
 
 const game = {
   team1: 'Bayern Munich',
@@ -219,23 +240,195 @@ const game = {
 };
 
 
-// 5 object selective selection
+const MENU=[...restaurant.starterMenu,restaurant.mainMenu];
+// console.log(MENU);
 
-const {odds:{team1,x:draw,team2}}=game;
-// console.log(team1,draw,team2);
+for(const [no,i] of restaurant.starterMenu.entries())
+  console.log(no,i); 
+  // const user=[{name:"shuba",branch:"IT"}];
+  // console.log(user[0]?.name ?? console.log("User name not found!!"));
 
-// 6 Name of player scored goal return count
+  */
+ 
+const restaurant = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-const six=function(...ardu){
-  console.log(`${ardu.length} goals has been scored!!`);
+  order: function(st,rd){
+    return [this.categories[st],this.categories[rd]];
+  },
+
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+  }
 }
 
-// six("1","2","safs","12123asd","rasda");
+// for(const {open,close} of Object.values(restaurant.openingHours)){
+//   // console.log(open,close);
+// }
 
-six(...game.scored);
+// const MENU=restaurant.mainMenu;
+// // console.log(MENU.values());
+// for(const x of MENU.values())
+// {
+//   console.log(x);
+// }
 
-// 7 passing the avaliable goals
 
-team1>team2 && console.log("Team 1 won the game!!");
-team1<team2 && console.log("Team 2 won the game!!");
+// const x=`team1`;
+// console.log(game.x);
+
+// Bonus Challenge
+
+/*
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+
+  date: 'Nov 9th, 2037',
+
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+const sccore=game.scored;
+let flag=0;
+let Arr=[];
+let objArr={};
+let temp;
+
+for(let i=0;i<sccore.length;i++)
+{
+  flag=0;
+  if(i==0)Arr.push(sccore[0]);
+
+  for(let j=0;j<Arr.length;j++)
+  {
+    if(Arr[j]==sccore[i])
+    {
+      flag=1;
+      // console.log(`foundYA!! => ${sccore[i]}`);
+      temp=sccore[i];
+    // console.log(sccore[i]);
+      objArr[temp]=1;
+      // console.log(objArr);
+    }
+  }
+
+  if(flag===0){
+    Arr.push(sccore[i]);
+    temp=sccore[i];
+    // console.log(temp);
+    objArr[temp]=1;
+  }
+
+  else{
+    objArr[temp]+=1;
+  }
+}
+
+console.log(objArr);
+*/
+// Coding challenge #2
+
+/*
+// 1 LOOP on scored!!
+for(const [no,name] of game.scored.entries())
+{
+  console.log(`Goal ${no+1}: ${name}`);
+}
+*/
+
+/*
+
+// 2 average of obj
+
+let avg=0;
+const oddy=Object.values(game.odds);
+for(const i of oddy)avg+=i;
+avg/=oddy.length;
+// console.log(`Average is ${avg}`);
+
+// 3 obj manipulation
+
+for(const [team,odd] of Object.entries(game.odds)){
+  const teamStr=team==='x'?"Draw":game[team];
+  console.log(`odds of ${teamStr} is ${odd}`);
+}
+
+2 odds in nice formatted way
+*/
+
+// const oddQ=Object.entries(game.odds);
+// // console.log(oddQ);
+
+// for(const [,[x,y]] of oddQ.entries())
+// {
+//   console.log(`${game.x} `)
+//   if(x==="x"){
+//     console.log(`Odds of draw: ${game.y}`);
+//   }else
+//   {
+//     console.log(`Odds of victory of ${x}: ${y}`);
+//   }
+  
+// }
+
+
+
+
+
+
+
+
+
+
+
 
