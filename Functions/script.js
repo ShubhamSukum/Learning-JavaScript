@@ -36,5 +36,15 @@ const trans=function(str,fn){
     console.log(`${fn.name} function`)
 }
 
-trans("Javascript mastery",first);
-trans("Javascript mastery",second);
+// trans("Javascript mastery",first);
+// trans("Javascript mastery",second);
+
+const first1=function(greeting){
+    return function(greet){
+        console.log(`${greeting}=====${greet}`);
+    };
+};
+
+const func=first1("Shubham");
+func("HELLOOOO!!")
+
