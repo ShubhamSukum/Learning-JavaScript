@@ -41,10 +41,22 @@ const trans=function(str,fn){
 
 const first1=function(greeting){
     return function(greet){
-        console.log(`${greeting}=====${greet}`);
+        console.log(`${greeting}*****${greet}`);
     };
 };
 
-const func=first1("Shubham");
-func("HELLOOOO!!")
+// const func=first1("Shubham");
+// func("HELLOOOO!!")
+
+// first1("Shubz")("Hello!");
+
+// arrow function
+
+const arrow1=(greeting)=>{
+    return (greet)=>{
+        console.log(`${greeting} => ${greet}`);
+    };
+};
+
+arrow1("SHubz")("hello");
 
