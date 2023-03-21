@@ -111,10 +111,53 @@ const Bind1=friend.bind(real);
 objName.planes=200;
 
 objName.func=function(){
-    console.log(this);
+    // console.log(this);
     this.planes++;
     console.log(`=> ${this.planes} <=`);
 };
 
 document.querySelector(".buy").
 addEventListener("click",objName.func.bind(objName));
+
+// Coding Challenge
+
+const poll={
+    question: "What is your favourite programming language?",
+    options: ['0: JavaScript','1: Python','2: Rust','3: C++'],
+    answers: new Array(4).fill(0),
+    checked(){
+        const answer=
+        Number(prompt(`${this.question}\n${this.options.join('\n')}
+(Write option Number)`));
+        // console.log(answer);
+        typeof answer==='number' && answer<this.answers.length && this.answers[answer]++;
+
+        // console.log(this.answers);
+        this.displayResult();
+        this.displayResult("string");
+
+    },
+
+    displayResult(type="array"){
+        if(type==="array"){
+            console.log(this.answers);
+        }
+        else if(type==="string"){
+            console.log(`The stringified result is => ${this.answers.join(", ")}`);
+        }
+    }
+};
+
+// document.querySelector(".poll").addEventListener("click",poll);
+document.
+querySelector(".poll").
+addEventListener("click",poll.checked.bind(poll));
+
+// poll.displayResult.call({answers:[5,2,4]});
+
+// IFIE
+
+(function(){
+    console.log(`IFIE is working`);
+})()
+
