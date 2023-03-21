@@ -20,6 +20,9 @@
 
 // Procrastination 1-0
 
+
+// -------------------------------------------
+/*
 const first=function(str){
     return str.replace(/ /g,"").toUpperCase();
 }
@@ -45,12 +48,6 @@ const first1=function(greeting){
     };
 };
 
-// const func=first1("Shubham");
-// func("HELLOOOO!!")
-
-// first1("Shubz")("Hello!");
-
-// arrow function
 
 const arrow1=(greeting)=>{
     return (greet)=>{
@@ -58,5 +55,66 @@ const arrow1=(greeting)=>{
     };
 };
 
-arrow1("SHubz")("hello");
+// const func=first1("Shubham");
+// func("HELLOOOO!!")
 
+// first1("Shubz")("Hello!");
+
+// arrow function
+
+
+
+// arrow1("SHubz")("hello");
+
+
+// objName.add("Shubham Sukum","Te-11");
+// objName.add("ky mahit kon","Te-12");
+// objName.add("ky mahit sudbua","se-12");
+// console.log(objName.friends);
+
+*/
+
+const objName={
+    name:"Shubz",
+    class:11,
+    friends:[],
+
+    add(friName,nameClass){
+        console.log(`Function name => ${this.name} from class ${this.class} is adding ${friName} from ${nameClass} as his friend!!`);
+        this.friends.push({name:friName,class:nameClass});
+    }
+};
+
+const real={
+    name:"real",
+    class:"High",
+    friends:[]
+};
+const friend=objName.add;
+
+const dotdot=["argument","values"];
+
+// friend.call(real,...dotdot);
+// console.log(...dotdot);
+
+// call the function from where we need it to call it. 
+// friend.call(real,"Shreetej","Medical");
+// friend.call(objName,"ObjName..","Class no idea");
+
+// document.querySelector("buy").
+// addEventListener("click",);
+
+const Bind1=friend.bind(real);
+
+// Bind1("shubz","opieee");
+
+objName.planes=200;
+
+objName.func=function(){
+    console.log(this);
+    this.planes++;
+    console.log(`=> ${this.planes} <=`);
+};
+
+document.querySelector(".buy").
+addEventListener("click",objName.func.bind(objName));
