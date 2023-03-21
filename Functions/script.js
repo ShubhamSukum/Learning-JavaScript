@@ -157,7 +157,23 @@ addEventListener("click",poll.checked.bind(poll));
 
 // IFIE
 
-(function(){
-    console.log(`IFIE is working`);
-})()
+// (function(){
+//     console.log(`IFIE is working`);
+// })()
 
+const dunc=function(){
+    let element=0;
+
+    return function(){
+        element++;
+        console.log(element);
+    }
+}
+
+const dunc1=dunc();
+
+// dunc1();
+// dunc1();
+// dunc1();
+
+console.dir(dunc1);
