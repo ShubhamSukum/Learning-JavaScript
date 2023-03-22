@@ -176,4 +176,31 @@ const dunc1=dunc();
 // dunc1();
 // dunc1();
 
-console.dir(dunc1);
+// console.dir(dunc1);
+
+const timer=function(n,wait){
+    const perGroup=Math.trunc(n/3);
+
+    setTimeout(function(){
+        console.log(`${n} ${n===1?"is":"are"} the number of groups`);
+        console.log(`There are 3 group each with ${perGroup} passengers!!`);
+    },wait*1000);
+
+    console.log(`The boarding will start in ${wait}`);
+};
+
+// timer(180,3);
+
+// Closure Coding challenge => 2
+
+(function(){
+    const header=document.querySelector("h1");
+    header.style.color="red";
+
+    document.querySelector("body").
+    addEventListener("click",function(){
+        header.style.color="blue";
+    });
+})()
+
+// End of Closure lecture!!
