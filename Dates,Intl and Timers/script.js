@@ -252,3 +252,27 @@ btnSort.addEventListener('click', function (e) {
 /////////////////////////////////////////////////
 // LECTURES
 
+// console.log(Number.parseInt("124124nnimmo"));
+// console.log(Number.parseFloat("12.123"));
+
+// console.log(isNaN(0/0));  // true
+// console.log(isNaN(1/0));  // false
+// console.log(isNaN(0/1));  // false
+
+// console.log(isFinite(12));
+
+// console.log((12321.123).toFixed(2)); // 12321.12
+// console.log((1.121233).toFixed(2)); // 1.12
+// console.log((1.121233).toFixed(0)); // 1
+
+// returns string throw..
+
+labelBalance.addEventListener("click",function(){
+  [...document.querySelectorAll(".movements__row")].
+  forEach(function(row,i){
+    if(i%2===0){
+      row.style.backgroundColor="skyblue";
+    }
+  });
+});
+
