@@ -81,6 +81,20 @@ const inputClosePin = document.querySelector('.form__input--pin');
 /////////////////////////////////////////////////
 // Functions
 
+const format=function()
+{
+    const now=new Date();
+    const day=`${date.getDate()}`.padStart(2,0);
+    const month=`${date.getMonth()+1}`.padStart(2,0);
+    const year=date.getFullYear();
+
+    const displayDate=`${day}/${month}/${year}`;
+
+    const dayBet=function(date1,date2){
+      return Math.abs(date1-date2)/(1000*60*60*24);
+    };
+}
+
 const displayMovements = function (acc, sort = false) {
   containerMovements.innerHTML = '';
 
@@ -96,6 +110,11 @@ const displayMovements = function (acc, sort = false) {
     const year=date.getFullYear();
 
     const displayDate=`${day}/${month}/${year}`;
+
+    const dayBet=function(date1,date2){
+      return Math.abs(date1-date2)/(1000*60*60*24);
+    };
+    
 
     const html = `
       <div class="movements__row">
@@ -188,8 +207,8 @@ btnLogin.addEventListener('click', function (e) {
     const day=`${now.getDate()}`.padStart(2,0);
     const month=`${now.getMonth()+1}`.padStart(2,0);
     const year=now.getFullYear();
-    const hour=now.getHours();
-    const min=now.getMinutes();
+    const hour=`${now.getHours()}`.padStart(2,0);
+    const min=`${now.getMinutes()}`.padStart(2,0);
 
 labelDate.textContent=`${day}/${month}/${year}, ${hour}:${min}`;
 
@@ -220,6 +239,9 @@ btnTransfer.addEventListener('click', function (e) {
     currentAccount.movements.push(-amount);
     receiverAcc.movements.push(amount);
 
+    currentAccount.movementsDates.push(new Date().toISOString());
+    receiverAcc.movementsDates.push(new Date().toISOString());
+
     // Update UI
     updateUI(currentAccount);
   }
@@ -233,6 +255,7 @@ btnLoan.addEventListener('click', function (e) {
   if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
     // Add movement
     currentAccount.movements.push(amount);
+    currentAccount.movementsDates.push(new Date().toISOString());
 
     // Update UI
     updateUI(currentAccount);
@@ -300,3 +323,16 @@ labelBalance.addEventListener("click",function(){
 
 // const num=BigInt(111);
 // console.log(num);
+
+const future=new Date();
+// console.log(+future);
+
+const dayBet=function(date1,date2){
+  return Math.abs(date1-date2)/(1000*60*60*24);
+};
+
+const res=dayBet(new Date(2023,1,6),
+new Date(2023,1,17)); 
+
+// console.log(res);
+
