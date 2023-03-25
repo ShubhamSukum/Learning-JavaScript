@@ -805,7 +805,20 @@ console.log(dogsSorted);
 
 // setTimeout
 
-setTimeout((ag1,ag2)=>{
+const arr=["arg1","arg2"];
+
+const timeoutName=setTimeout((ag1,ag2)=>{
   console.log(`This are the arguments ${ag1} and ${ag2}`);
-},2000,"argument1","argument2");
+},2000,...arr);
 // After 3000 millisecond it will act
+
+// to clear a timer of setTimeout => clearTimeout();
+if(arr.includes("arg1"))clearTimeout(timeoutName);
+// doesnt allow to run it...
+
+// setInterval
+
+// setInterval(function(){
+//   const now=new Date();
+//   console.log(now.getSeconds());
+// },1000);
