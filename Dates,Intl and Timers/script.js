@@ -662,7 +662,7 @@ const bankDepositSum = accounts
   .filter(mov => mov > 0)
   .reduce((sum, cur) => sum + cur, 0);
 
-console.log(bankDepositSum);
+// console.log(bankDepositSum);
 
 // 2.
 // const numDeposits1000 = accounts
@@ -673,12 +673,12 @@ const numDeposits1000 = accounts
   .flatMap(acc => acc.movements)
   .reduce((count, cur) => (cur >= 1000 ? ++count : count), 0);
 
-console.log(numDeposits1000);
+// console.log(numDeposits1000);
 
 // Prefixed ++ oeprator
 let a = 10;
-console.log(++a);
-console.log(a);
+// console.log(++a);
+// console.log(a);
 
 // 3.
 const { deposits, withdrawals } = accounts
@@ -692,7 +692,7 @@ const { deposits, withdrawals } = accounts
     { deposits: 0, withdrawals: 0 }
   );
 
-console.log(deposits, withdrawals);
+// console.log(deposits, withdrawals);
 
 // 4.
 // this is a nice title -> This Is a Nice Title
@@ -710,9 +710,9 @@ const convertTitleCase = function (title) {
   return capitzalize(titleCase);
 };
 
-console.log(convertTitleCase('this is a nice title'));
-console.log(convertTitleCase('this is a LONG title but not too long'));
-console.log(convertTitleCase('and here is another title with an EXAMPLE'));
+// console.log(convertTitleCase('this is a nice title'));
+// console.log(convertTitleCase('this is a LONG title but not too long'));
+// console.log(convertTitleCase('and here is another title with an EXAMPLE'));
 
 ///////////////////////////////////////
 // Coding Challenge #4
@@ -801,3 +801,11 @@ console.log(dogs.filter(checkEatingOkay));
 const dogsSorted = dogs.slice().sort((a, b) => a.recFood - b.recFood);
 console.log(dogsSorted);
 */
+
+
+// setTimeout
+
+setTimeout((ag1,ag2)=>{
+  console.log(`This are the arguments ${ag1} and ${ag2}`);
+},2000,"argument1","argument2");
+// After 3000 millisecond it will act
