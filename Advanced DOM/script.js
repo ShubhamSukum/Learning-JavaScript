@@ -54,4 +54,20 @@ header.append(message);
 //   sec1.before(butBet);
 // })
 
+// Removing DOM
+document.querySelector(".btn--close").addEventListener("click",function(){
+  message.remove();
+})
+
+// console.log(message.style);
+// console.log(getComputedStyle(message).color);
+
+// message.style.width="120%";
+message.style.backgroundColor="grey";
+message.style.height=Number.parseFloat(getComputedStyle(message).height)+10+"px";
+
+const logo=document.querySelector(".nav__logo");
+// console.log(logo.className);
+
+
 
