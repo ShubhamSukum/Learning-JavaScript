@@ -38,3 +38,20 @@ const message=document.createElement('div');
 message.classList.add('cookie-message');
 message.innerHTML='Its Working <button class="btn btn--close">WORKED</button>';
 header.append(message);
+
+
+// console.log(sec1);
+
+/* Self Prac */
+// Adding a button before section--1
+// Button Between => ButBet
+
+// Code
+// const sec1=document.getElementById("section--1");
+// document.body.addEventListener("click",function(){
+//   const butBet=document.createElement("button");
+//   butBet.innerHTML="Button text";
+//   sec1.before(butBet);
+// })
+
+
