@@ -117,9 +117,25 @@ const randomInt=(min,max)=>Math.floor(Math.random()*(max-min+1)+min);  // works 
 const randColor=()=>`rgb(${randomInt(0,255)},${randomInt(0,255)},${randomInt(0,255)})`;
 // console.log(randColor(0,255))
 
-document.querySelector(".nav__links").addEventListener("click",function(){
+document.querySelector(".nav__links").addEventListener("click",function(e){
+  e.stopPropagation();
   this.style.backgroundColor=randColor();
-  console.log("working")
+  // console.log("working")
 });
 
-console.log(randColor())
+document.querySelector(".nav").addEventListener("click",function(){
+  this.style.backgroundColor=randColor();
+  // console.log("working")
+});
+
+// console.log(randColor());
+
+document.querySelectorAll(".nav__link").forEach(function(el){
+  el.addEventListener("click",function(e){
+    e.preventDefault();
+    console.log(this);
+    const id=this.getAttribute("href");
+    // console.log(this.getAttribute("href"));
+    document.querySelector(id).scrollIntoView({behavior:"smooth"});
+  })
+});
