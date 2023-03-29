@@ -117,25 +117,45 @@ const randomInt=(min,max)=>Math.floor(Math.random()*(max-min+1)+min);  // works 
 const randColor=()=>`rgb(${randomInt(0,255)},${randomInt(0,255)},${randomInt(0,255)})`;
 // console.log(randColor(0,255))
 
-document.querySelector(".nav__links").addEventListener("click",function(e){
-  e.stopPropagation();
-  this.style.backgroundColor=randColor();
-  // console.log("working")
-});
+// document.querySelector(".nav__links").addEventListener("click",function(e){
+//   e.stopPropagation();
+//   this.style.backgroundColor=randColor();
+//   // console.log("working")
+// });
 
-document.querySelector(".nav").addEventListener("click",function(){
-  this.style.backgroundColor=randColor();
-  // console.log("working")
-});
+// document.querySelector(".nav").addEventListener("click",function(){
+//   this.style.backgroundColor=randColor();
+//   // console.log("working")
+// });
 
 // console.log(randColor());
 
-document.querySelectorAll(".nav__link").forEach(function(el){
-  el.addEventListener("click",function(e){
-    e.preventDefault();
-    console.log(this);
-    const id=this.getAttribute("href");
-    // console.log(this.getAttribute("href"));
+// document.querySelectorAll(".nav__link").forEach(function(el){
+//   el.addEventListener("click",function(e){
+//     e.preventDefault();
+//     // console.log(this);
+//     const id=this.getAttribute("href");
+//     // console.log(this.getAttribute("href"));
+//     document.querySelector(id).scrollIntoView({behavior:"smooth"});
+//   })
+// });
+
+document.querySelector(".nav__links").
+addEventListener("click",function(e){
+  e.preventDefault();
+  
+  if(e.target.classList.contains("nav__link")){
+    console.log("LINK"+e.target.getAttribute("href"));                                                                  
+    const id=e.target.getAttribute("href");                                           
     document.querySelector(id).scrollIntoView({behavior:"smooth"});
-  })
-});
+  }
+}); 
+    // console.log(e.target);
+    //comments
+    // LINK#section--1
+    // console.log(this);
+    // console.log(this.getAttribute("href"));
+
+
+
+
