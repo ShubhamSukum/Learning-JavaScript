@@ -198,7 +198,47 @@ tabsContainer.addEventListener("click",function(e){
 
 // Cards ON-OFF
 
-nav.addEventListener("mouseover",function(e){
+// opacity Decresing GAME
+
+// nav.addEventListener("mouseover",function(e){
+//   if(e.target.classList.contains("nav__link")){
+//     const link=e.target;
+//     const siblings=link.closest(".nav").querySelectorAll(".nav__link");
+//     const logo=link.closest(".nav").querySelector("img");
+
+//     siblings.forEach(el=>{
+//       if(el!==link){
+//         el.style.opacity=0.5;
+//       }
+//     });
+
+//     logo.style.opacity=0.5;
+//   }
+// });
+
+// nav.addEventListener("mouseout",function(e){
+//   if(e.target.classList.contains("nav__link")){
+//     const link=e.target;
+//     const siblings=link.closest(".nav").querySelectorAll(".nav__link");
+//     const logo=link.closest(".nav").querySelector("img");
+
+//     siblings.forEach(el=>{
+//       if(el!==link){
+//         el.style.opacity=1;
+//       }
+//     });
+
+//     logo.style.opacity=1;
+//   }
+// });
+
+// opacity Decresing GAME
+
+// opacity Decresing GAME DRY (Do Repeat Yourself)
+// ***********************************************************************
+
+/*
+const dryHandle=function(e,opacity){
   if(e.target.classList.contains("nav__link")){
     const link=e.target;
     const siblings=link.closest(".nav").querySelectorAll(".nav__link");
@@ -206,15 +246,31 @@ nav.addEventListener("mouseover",function(e){
 
     siblings.forEach(el=>{
       if(el!==link){
-        el.style.opacity=0.5;
+        el.style.opacity=opacity;
       }
     });
 
-    logo.style.opacity=0.5;
+    logo.style.opacity=opacity;
   }
+};
+
+nav.addEventListener("mouseover",function(e){
+  dryHandle(e,0.5)
 });
 
 nav.addEventListener("mouseout",function(e){
+  dryHandle(e,1)
+});
+*/
+
+// ***********************************************************************
+// opacity Decresing GAME DRY (Do Repeat Yourself)
+
+
+// How to pass ARGUMENT and understand bind thing
+// ***********************************************************************
+
+const dryHandle=function(e){
   if(e.target.classList.contains("nav__link")){
     const link=e.target;
     const siblings=link.closest(".nav").querySelectorAll(".nav__link");
@@ -222,10 +278,16 @@ nav.addEventListener("mouseout",function(e){
 
     siblings.forEach(el=>{
       if(el!==link){
-        el.style.opacity=1;
+        el.style.opacity=this;
       }
     });
 
-    logo.style.opacity=1;
+    logo.style.opacity=this;
   }
-})
+};
+
+nav.addEventListener("mouseover",dryHandle.bind(0.5));
+nav.addEventListener("mouseout",dryHandle.bind(1));
+
+// ***********************************************************************
+// How to pass ARGUMENT and understand bind thing
