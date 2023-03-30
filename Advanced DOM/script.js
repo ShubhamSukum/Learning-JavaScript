@@ -10,6 +10,7 @@ const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
 const header=document.querySelector(".header");
 const btnScroll=document.querySelector(".btn--scroll-to");
 const section1=document.getElementById("section--1");
+const nav=document.querySelector(".nav");
 
 const openModal = function (e) {
   e.preventDefault();
@@ -156,17 +157,18 @@ addEventListener("click",function(e){
     // console.log(this);
     // console.log(this.getAttribute("href"));
 
+// Cards ON-OFF
 
 const H1=document.querySelector("h1");
 const t=h1.querySelector(".highlight");
+const NAV=document.querySelector(".nav__link");
+const tabs=document.querySelectorAll(".operations__tab");
+const tabsContainer=document.querySelector(".operations__tab-container");
+const tabsContent=document.querySelectorAll(".operations__content");
 
 // console.log(h1.children);
-
-h1.firstElementChild.style.color="white";
-h1.lastElementChild.style.color="orangered";
-
-const NAV=document.querySelector(".nav__link");
-
+// h1.firstElementChild.style.color="white";
+// h1.lastElementChild.style.color="orangered";
 // console.log(H1.parentElement.children);
 
 [...H1.parentElement.children].forEach(function(el){
@@ -174,10 +176,6 @@ const NAV=document.querySelector(".nav__link");
     el.style.transform="scale(1)";
   }
 });
-
-const tabs=document.querySelectorAll(".operations__tab");
-const tabsContainer=document.querySelector(".operations__tab-container");
-const tabsContent=document.querySelectorAll(".operations__content");
 
 tabsContainer.addEventListener("click",function(e){
   const clicked=e.target.closest(".operations__tab");
@@ -198,3 +196,36 @@ tabsContainer.addEventListener("click",function(e){
   document.querySelector(`.operations__content--${clicked.dataset.tab}`).classList.add("operations__content--active");
 });
 
+// Cards ON-OFF
+
+nav.addEventListener("mouseover",function(e){
+  if(e.target.classList.contains("nav__link")){
+    const link=e.target;
+    const siblings=link.closest(".nav").querySelectorAll(".nav__link");
+    const logo=link.closest(".nav").querySelector("img");
+
+    siblings.forEach(el=>{
+      if(el!==link){
+        el.style.opacity=0.5;
+      }
+    });
+
+    logo.style.opacity=0.5;
+  }
+});
+
+nav.addEventListener("mouseout",function(e){
+  if(e.target.classList.contains("nav__link")){
+    const link=e.target;
+    const siblings=link.closest(".nav").querySelectorAll(".nav__link");
+    const logo=link.closest(".nav").querySelector("img");
+
+    siblings.forEach(el=>{
+      if(el!==link){
+        el.style.opacity=1;
+      }
+    });
+
+    logo.style.opacity=1;
+  }
+})
