@@ -39,7 +39,7 @@ document.addEventListener('keydown', function (e) {
 
 const message=document.createElement('div');
 message.classList.add('cookie-message');
-message.innerHTML='Its Working <button class="btn btn--close">WORKED</button>';
+message.innerHTML='Created a Dyanmic div <button class="btn btn--close">click here to REMOVE</button>';
 header.append(message);
 
 
@@ -291,3 +291,26 @@ nav.addEventListener("mouseout",dryHandle.bind(1));
 
 // ***********************************************************************
 // How to pass ARGUMENT and understand bind thing
+
+
+
+// Sticky Bar with scroll EVENT
+// ***********************************************************************
+// const section1=document.getElementById("section--1");
+
+const scro1=section1.getBoundingClientRect();
+console.log(scro1);
+
+window.addEventListener("scroll",function(){
+  console.log(window.scrollY);
+
+  if(window.scrollY > scro1.top){
+    nav.classList.add("sticky");
+  }
+  else{
+    nav.classList.remove("sticky");
+  }
+});
+
+// ***********************************************************************
+// Sticky Bar with scroll EVENT
